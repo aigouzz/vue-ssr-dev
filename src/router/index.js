@@ -16,7 +16,9 @@ const routes = [
 ];
 
 
-export default createRouter({
-    mode: createWebHashHistory(),
-    routes,
-});
+export default () => {
+    return createRouter({
+        mode: createWebHashHistory(),
+        routes,
+    })
+};

@@ -6,8 +6,11 @@ import {ref} from 'vue';
 </script>
 
 <template>
-  <div>首页</div>
-  <router-view></router-view>
+  <div id="app">
+    <router-link to="/home">home</router-link>
+    <router-link to="/about">about</router-link>
+    <router-view></router-view>
+  </div>
 </template>
 
 <style>

@@ -1,7 +1,8 @@
 import {createStore} from'vuex';
 import {postFn} from '../api/request';
 
-export default createStore({
+export default () => {
+    return createStore({
     state: {
         items: {}
     },
@@ -22,4 +23,5 @@ export default createStore({
             state.items = data.items;
         },
     },
-});
+})
+};

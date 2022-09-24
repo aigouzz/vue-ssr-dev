@@ -1,4 +1,4 @@
-## 第三阶段
+## vue2 + vuex + vue-router + webpack + ssr
 
 后端渲染 包含 Ajax 数据
 

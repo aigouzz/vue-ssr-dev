@@ -1,14 +1,17 @@
-import Vue from "vue";
-import App from "./App.vue";
-// import createRouter from './router/index';
-// import createStore from './vuex/store'
-export default () => { // 为了保证实例的唯一性所以导出一个创建实例的函数
-    // let router = createRouter();
-    // let store = createStore();
-    const app = new Vue({
-        // router,
-        // store,
-        render: h => h(App)
-    });
-    return { app};
-};
+import Vue from 'vue';
+import createStore from './store/store.js';
+import createRouter from './router';
+import App from './App.vue';
+
+export function createApp() {
+  const store = createStore();
+  const router = createRouter();
+
+  const app = new Vue({
+    router,
+    store,
+    render: h => h(App)
+  });
+
+  return { app, store, router, App };
+}

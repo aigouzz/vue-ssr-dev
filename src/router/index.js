@@ -1,24 +1,27 @@
-import {createRouter, createWebHashHistory} from 'vue-router';
-import Home from '@/views/Home';
-import About from '@/views/About';
+import Vue from 'vue';
+import Router from 'vue-router';
+import Bar from '../components/Bar.vue';
 
-const routes = [
+Vue.use(Router);
+
+function createRouter() {
+  const routes = [
     {
-        path: '/home',
-        name: 'home',
-        component: Home,
+      path: '/bar',
+      component: Bar
     },
     {
-        path: '/about',
-        name: 'about',
-        component: About,
+      path: '/foo',
+      component: () => import('../components/Foo.vue')   // 异步路由
     }
-];
+  ];
 
+  const router = new Router({
+    mode: 'history',
+    routes
+  });
 
-export default () => {
-    return createRouter({
-        mode: createWebHashHistory(),
-        routes,
-    })
-};
+  return router;
+}
+
+export default createRouter;

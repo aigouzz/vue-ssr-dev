@@ -16,22 +16,5 @@ module.exports = merge(base, {
       }),
       new webpack.HotModuleReplacementPlugin(),
     ],
-    devServer: {
-        open: true,
-        post: 8080,
-        hot: true,
-        proxy: {
-            '/api': {
-                target: 'http://127.0.0.1',
-                pathRewrite: {
-                    '/api': ''
-                },
-                changeOrigin: true
-            }
-        },
-    },
     mode: 'development',
-    node: {
-        fs: 'empty'
-    }
   });

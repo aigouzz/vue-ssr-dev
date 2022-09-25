@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node server/server.js",
-    "dev": "webpack-dev-server config/webpack.config.js",
+    "dev": "node config/devserver.js",
     "build:client": "webpack --config config/webpack.client.config.js",
     "build:server": "webpack --config config/webpack.server.config.js"
   },

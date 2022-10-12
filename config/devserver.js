@@ -5,7 +5,6 @@ let webpackDevServer = require('webpack-dev-server');
 let compiler = webpack(config);
 
 let server = new webpackDevServer(compiler, {
-    hot: true,
     historyApiFallback: true,
     open: true,
     hot: true,

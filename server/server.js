@@ -34,6 +34,7 @@ backendRouter.get('*', (ctx, next) => {
   ctx.status = 200;
   ctx.type = 'html';
   ctx.body = ssrStream;
+
 });
 
 backendApp

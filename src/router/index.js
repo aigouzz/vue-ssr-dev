@@ -17,6 +17,10 @@ function createRouter() {
     {
       path: '/about',
       component: () => import('../components/About.vue')   // 异步路由
+    },
+    {
+      path: '*',
+      component: Bar
     }
   ];
 
